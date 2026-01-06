@@ -1,0 +1,73 @@
+.currentState {
+  min-height: 100vh;
+  width: 100%;
+  padding: var(--section-padding) clamp(2rem, 8vw, 12rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background: var(--pe-light);
+  color: var(--pe-dark);
+}
+
+.sectionLabel {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--pe-blue);
+  margin-bottom: 1rem;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.sectionLabel.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.sectionTitle {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 600;
+  margin-bottom: 2rem;
+  line-height: 1.2;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out 0.1s;
+}
+
+.sectionTitle.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.textBlock {
+  max-width: 700px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out 0.2s;
+}
+
+.textBlock.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.textBlock p {
+  font-size: 1.25rem;
+  line-height: 1.8;
+  color: var(--pe-gray);
+  margin-bottom: 1.5rem;
+}
+
+.textBlock p:last-child {
+  margin-bottom: 0;
+}
+
+.textBlock strong {
+  color: var(--pe-dark);
+  font-weight: 600;
+}

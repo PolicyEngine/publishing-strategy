@@ -1,0 +1,135 @@
+.nextSteps {
+  min-height: 100vh;
+  width: 100%;
+  padding: var(--section-padding) clamp(2rem, 8vw, 12rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  background: var(--pe-dark);
+  text-align: center;
+}
+
+.sectionLabel {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--pe-green-light);
+  margin-bottom: 1rem;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.sectionLabel.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.sectionTitle {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 600;
+  margin-bottom: 2rem;
+  line-height: 1.2;
+  color: var(--pe-light);
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out 0.1s;
+}
+
+.sectionTitle.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.ctaContainer {
+  max-width: 600px;
+  margin: 3rem auto 0;
+}
+
+.ctaText {
+  font-size: 1.2rem;
+  color: var(--pe-gray-light);
+  margin-bottom: 2.5rem;
+  line-height: 1.8;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out 0.2s;
+}
+
+.ctaText.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.ctaButtons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out 0.3s;
+}
+
+.ctaButtons.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.ctaButtonPrimary,
+.ctaButtonSecondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  font-family: var(--font-body);
+}
+
+.ctaButtonPrimary {
+  background: linear-gradient(135deg, var(--pe-green) 0%, var(--pe-green-light) 100%);
+  color: white;
+  border: none;
+}
+
+.ctaButtonPrimary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(41, 132, 90, 0.4);
+}
+
+.ctaButtonSecondary {
+  background: transparent;
+  border: 2px solid var(--pe-gray);
+  color: var(--pe-light);
+}
+
+.ctaButtonSecondary:hover {
+  border-color: var(--pe-light);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.footerNote {
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.85rem;
+  color: var(--pe-gray);
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out 0.4s;
+}
+
+.footerNote.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

@@ -1,0 +1,315 @@
+.weeklyRhythm {
+  min-height: 100vh;
+  width: 100%;
+  padding: var(--section-padding) clamp(2rem, 8vw, 12rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background: var(--pe-dark);
+}
+
+.sectionLabel {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--pe-green-light);
+  margin-bottom: 1rem;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.sectionLabel.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.sectionTitle {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 600;
+  margin-bottom: 3rem;
+  line-height: 1.2;
+  color: var(--pe-light);
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out 0.1s;
+}
+
+.sectionTitle.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Month Selector */
+.monthSelector {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease-out 0.15s;
+}
+
+.monthSelector.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.monthButton {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.monthButton:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.monthButton.active {
+  background: rgba(41, 132, 90, 0.2);
+  border-color: var(--pe-green);
+}
+
+.monthLabel {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--pe-light);
+}
+
+.monthSubtitle {
+  font-size: 0.8rem;
+  color: var(--pe-gray-light);
+}
+
+.monthButton.active .monthLabel {
+  color: var(--pe-green-light);
+}
+
+/* Output Goal */
+.outputGoal {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: rgba(44, 100, 150, 0.2);
+  border: 1px solid rgba(44, 100, 150, 0.3);
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  margin-bottom: 2.5rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease-out 0.2s;
+}
+
+.outputGoal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.goalIcon {
+  font-size: 1.25rem;
+}
+
+.goalText {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--pe-light);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.meetingsSection,
+.dailySection {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out 0.2s;
+}
+
+.meetingsSection.visible,
+.dailySection.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.subsectionTitle {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--pe-light);
+  margin-bottom: 1.5rem;
+}
+
+/* Meetings Grid */
+.meetingsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.meetingCard {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.meetingCard:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-2px);
+}
+
+.meetingDay {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--pe-green-light);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
+}
+
+.meetingName {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--pe-light);
+  margin-bottom: 0.25rem;
+}
+
+.meetingDuration {
+  font-size: 0.9rem;
+  color: var(--pe-blue);
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+}
+
+.meetingPurpose {
+  font-size: 0.9rem;
+  color: var(--pe-gray-light);
+  line-height: 1.5;
+}
+
+/* Daily Timeline */
+.dailyTimeline {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+}
+
+.dayCard {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 1.25rem;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.dayCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  border-radius: 12px 12px 0 0;
+}
+
+.dayCard.planning::before {
+  background: #9333ea;
+}
+
+.dayCard.research::before {
+  background: #3b82f6;
+}
+
+.dayCard.drafting::before {
+  background: #f59e0b;
+}
+
+.dayCard.publish::before {
+  background: var(--pe-green);
+}
+
+.dayCard.newsletter::before {
+  background: #ec4899;
+}
+
+.dayCard.review::before {
+  background: #8b5cf6;
+}
+
+.dayCard:hover {
+  background: rgba(255, 255, 255, 0.06);
+  transform: translateY(-2px);
+}
+
+.dayName {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--pe-light);
+  margin-bottom: 1rem;
+}
+
+.dayTasks {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dayTasks li {
+  font-size: 0.85rem;
+  color: var(--pe-gray-light);
+  padding: 0.35rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  line-height: 1.4;
+}
+
+.dayTasks li:last-child {
+  border-bottom: none;
+}
+
+@media (max-width: 1024px) {
+  .dailyTimeline {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .dailyTimeline {
+    grid-template-columns: 1fr !important;
+  }
+
+  .monthSelector {
+    flex-direction: column;
+  }
+
+  .monthButton {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0.75rem 1rem;
+  }
+
+  .outputGoal {
+    flex-direction: column;
+    text-align: center;
+  }
+}

@@ -1,0 +1,113 @@
+.hero {
+  min-height: 100vh;
+  width: 100%;
+  padding: var(--section-padding) clamp(2rem, 8vw, 12rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--pe-darker) 0%, var(--pe-dark) 50%, var(--pe-blue-dark) 100%);
+  text-align: center;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at 30% 70%, rgba(44, 100, 150, 0.15) 0%, transparent 50%),
+              radial-gradient(circle at 70% 30%, rgba(41, 132, 90, 0.1) 0%, transparent 40%);
+  animation: float 20s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  50% { transform: translate(-2%, 2%) rotate(1deg); }
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1;
+}
+
+.heroBadge {
+  display: inline-block;
+  background: rgba(41, 132, 90, 0.2);
+  border: 1px solid var(--pe-green);
+  color: var(--pe-green-light);
+  padding: 0.5rem 1.25rem;
+  border-radius: 2rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  margin-bottom: 2rem;
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.heroTitle {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  color: var(--pe-light);
+  animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+
+.heroTitle span {
+  background: linear-gradient(135deg, var(--pe-blue) 0%, var(--pe-green) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.heroSubtitle {
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  color: var(--pe-gray-light);
+  max-width: 600px;
+  margin: 0 auto 3rem;
+  font-weight: 300;
+  animation: fadeInUp 0.8s ease-out 0.6s both;
+}
+
+.scrollIndicator {
+  position: absolute;
+  bottom: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--pe-gray);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  animation: fadeInUp 0.8s ease-out 1s both;
+}
+
+.scrollIndicator::after {
+  content: '';
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to bottom, var(--pe-gray), transparent);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.3; transform: scaleY(1); }
+  50% { opacity: 1; transform: scaleY(1.2); }
+}

@@ -1,0 +1,209 @@
+.timeline {
+  min-height: 100vh;
+  width: 100%;
+  padding: var(--section-padding) clamp(2rem, 8vw, 12rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, #f0f4f8 0%, #e8eef4 100%);
+  color: var(--pe-dark);
+}
+
+.sectionLabel {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--pe-blue);
+  margin-bottom: 1rem;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.sectionLabel.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.sectionTitle {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 600;
+  margin-bottom: 2rem;
+  line-height: 1.2;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out 0.1s;
+}
+
+.sectionTitle.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.timelineContainer {
+  margin-top: 4rem;
+  position: relative;
+}
+
+.timelineTrack {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--pe-gray-light);
+  border-radius: 2px;
+}
+
+.timelineProgress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: linear-gradient(90deg, var(--pe-blue), var(--pe-green));
+  border-radius: 2px;
+  width: 0%;
+  transition: width 1s ease-out;
+}
+
+.timelineMonths {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  position: relative;
+}
+
+.timelineMonth {
+  text-align: center;
+  padding-top: 100px;
+  position: relative;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease-out;
+}
+
+.timelineMonth.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.timelineDot {
+  width: 24px;
+  height: 24px;
+  background: var(--pe-gray-light);
+  border: 4px solid var(--pe-light);
+  border-radius: 50%;
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: all 0.5s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.timelineMonth.active .timelineDot {
+  background: var(--pe-green);
+  transform: translateX(-50%) scale(1.2);
+}
+
+.timelineMonthLabel {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--pe-blue);
+  margin-bottom: 0.5rem;
+}
+
+.timelineMonthTitle {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.timelineStats {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  margin-top: 1rem;
+}
+
+.timelineStat {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--pe-gray-light);
+}
+
+.timelineStat:last-child {
+  border-bottom: none;
+}
+
+.timelineStatLabel {
+  color: var(--pe-gray);
+  font-size: 0.9rem;
+}
+
+.timelineStatValue {
+  font-weight: 600;
+  color: var(--pe-green);
+}
+
+/* Content Mix */
+.contentMix {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--pe-gray-light);
+}
+
+.mixLabel {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--pe-blue);
+  margin-bottom: 0.5rem;
+}
+
+.mixList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mixList li {
+  font-size: 0.85rem;
+  color: var(--pe-gray);
+  padding: 0.25rem 0;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.mixList li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--pe-green);
+}
+
+@media (max-width: 768px) {
+  .timelineMonths {
+    grid-template-columns: 1fr;
+  }
+
+  .timelineTrack {
+    display: none;
+  }
+
+  .timelineMonth {
+    padding-top: 0;
+  }
+
+  .timelineDot {
+    display: none;
+  }
+}

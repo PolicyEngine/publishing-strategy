@@ -1,0 +1,16 @@
+:root {
+  --pe-blue: #2C6496;
+  --pe-blue-dark: #1e4a6f;
+  --pe-green: #29845A;
+  --pe-green-light: #34a06d;
+  --pe-dark: #1a1a2e;
+  --pe-darker: #12121f;
+  --pe-light: #f8f9fc;
+  --pe-gray: #6b7280;
+  --pe-gray-light: #e5e7eb;
+
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'Inter', -apple-system, sans-serif;
+
+  --section-padding: clamp(4rem, 10vh, 8rem);
+}

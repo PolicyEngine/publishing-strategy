@@ -1,0 +1,217 @@
+.questions {
+  min-height: 100vh;
+  width: 100%;
+  padding: var(--section-padding) clamp(2rem, 8vw, 12rem);
+  padding-bottom: 6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: relative;
+  overflow: hidden;
+  background: var(--pe-darker);
+}
+
+.questionsIntro {
+  max-width: 700px;
+  margin-bottom: 4rem;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.questionsIntro.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.sectionLabel {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--pe-green-light);
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.sectionTitle {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 600;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  color: var(--pe-light);
+}
+
+.questionsIntro p {
+  font-size: 1.1rem;
+  color: var(--pe-gray-light);
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+/* Progress Indicator */
+.progressIndicator {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.progressCount {
+  font-size: 0.9rem;
+  color: var(--pe-gray);
+}
+
+.progressBar {
+  height: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+  overflow: hidden;
+  max-width: 300px;
+}
+
+.progressFill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--pe-blue), var(--pe-green));
+  border-radius: 3px;
+  transition: width 0.5s ease-out;
+}
+
+.questionCategories {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.questionCategory {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.6s ease-out;
+}
+
+.questionCategory.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.categoryHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.categoryIcon {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, var(--pe-blue), var(--pe-green));
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.categoryTitle {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--pe-light);
+}
+
+.questionCards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.questionCard {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  text-align: left;
+  font-family: var(--font-body);
+}
+
+.questionCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--pe-blue), var(--pe-green));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.questionCard:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.questionCard:hover::before {
+  transform: scaleX(1);
+}
+
+.questionCard.answered {
+  border-color: var(--pe-green);
+  background: rgba(41, 132, 90, 0.1);
+}
+
+.questionCard.answered::before {
+  transform: scaleX(1);
+}
+
+.questionNumber {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--pe-green);
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.answeredBadge {
+  background: var(--pe-green);
+  color: white;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+.questionText {
+  font-size: 1rem;
+  color: var(--pe-light);
+  line-height: 1.6;
+}
+
+/* Answer Block */
+.answerBlock {
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(41, 132, 90, 0.3);
+}
+
+.answerLabel {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--pe-green-light);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.answerText {
+  font-size: 0.95rem;
+  color: var(--pe-gray-light);
+  line-height: 1.6;
+  font-style: italic;
+}

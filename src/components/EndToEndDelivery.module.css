@@ -1,0 +1,241 @@
+.endToEnd {
+  min-height: 100vh;
+  width: 100%;
+  padding: var(--section-padding) clamp(2rem, 8vw, 12rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, var(--pe-darker) 0%, var(--pe-dark) 100%);
+}
+
+.sectionLabel {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--pe-green-light);
+  margin-bottom: 1rem;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.sectionLabel.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.sectionTitle {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+  color: var(--pe-light);
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out 0.1s;
+}
+
+.sectionTitle.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.intro {
+  font-size: 1.25rem;
+  color: var(--pe-gray-light);
+  max-width: 700px;
+  line-height: 1.7;
+  margin-bottom: 3rem;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out 0.2s;
+}
+
+.intro.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.intro strong {
+  color: var(--pe-light);
+}
+
+.subsectionTitle {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--pe-light);
+  margin-bottom: 1.5rem;
+}
+
+/* Framework Steps */
+.framework {
+  margin-bottom: 3rem;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out 0.3s;
+}
+
+.framework.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.stepsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.stepCard {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 1.5rem;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.stepCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  border-radius: 12px 12px 0 0;
+}
+
+.stepCard.blue::before {
+  background: var(--pe-blue);
+}
+
+.stepCard.green::before {
+  background: var(--pe-green);
+}
+
+.stepCard.purple::before {
+  background: #9333ea;
+}
+
+.stepCard.orange::before {
+  background: #f59e0b;
+}
+
+.stepCard:hover {
+  background: rgba(255, 255, 255, 0.06);
+  transform: translateY(-2px);
+}
+
+.stepNumber {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--pe-gray);
+  margin-bottom: 0.75rem;
+}
+
+.stepTitle {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--pe-light);
+  margin-bottom: 0.5rem;
+}
+
+.stepDescription {
+  font-size: 0.9rem;
+  color: var(--pe-gray-light);
+  line-height: 1.5;
+}
+
+/* Outlets */
+.outlets {
+  margin-bottom: 3rem;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out 0.4s;
+}
+
+.outlets.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.outletsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.outletItem {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 0.75rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  transition: all 0.3s ease;
+}
+
+.outletItem:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--pe-green);
+}
+
+.outletName {
+  font-weight: 600;
+  color: var(--pe-light);
+  font-size: 0.95rem;
+}
+
+.outletDesc {
+  font-size: 0.8rem;
+  color: var(--pe-gray);
+}
+
+/* Key Message */
+.keyMessage {
+  display: flex;
+  gap: 1.25rem;
+  background: linear-gradient(135deg, var(--pe-green) 0%, var(--pe-blue) 100%);
+  border-radius: 12px;
+  padding: 1.5rem 2rem;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out 0.5s;
+}
+
+.keyMessage.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.keyIcon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.keyText {
+  font-size: 1.1rem;
+  color: white;
+  line-height: 1.5;
+}
+
+.keyText strong {
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+@media (max-width: 768px) {
+  .keyMessage {
+    flex-direction: column;
+    text-align: center;
+  }
+}

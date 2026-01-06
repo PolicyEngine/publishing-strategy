@@ -1,0 +1,274 @@
+.contentTypes {
+  min-height: 100vh;
+  width: 100%;
+  padding: var(--section-padding) clamp(2rem, 8vw, 12rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--pe-blue) 0%, var(--pe-blue-dark) 100%);
+}
+
+.sectionLabel {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 1rem;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.sectionLabel.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.sectionTitle {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+  color: white;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out 0.1s;
+}
+
+.sectionTitle.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 2rem;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out 0.15s;
+}
+
+.subtitle.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.contentGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.secondaryRow {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.contentCard {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease, opacity 0.8s ease-out, transform 0.8s ease-out;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.contentCard.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.contentCard:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.contentCard.expanded {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.contentCard.primary {
+  background: rgba(41, 132, 90, 0.3);
+  border: 2px solid var(--pe-green);
+}
+
+.contentCard.primary:hover,
+.contentCard.primary.expanded {
+  background: rgba(41, 132, 90, 0.4);
+}
+
+/* Card Header */
+.cardHeader {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.contentIcon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.headerText {
+  flex: 1;
+}
+
+.contentTitle {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 0.35rem;
+}
+
+.contentDesc {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.5;
+}
+
+.expandIcon {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.5);
+  transition: transform 0.3s ease;
+  margin-top: 0.25rem;
+}
+
+.expandIcon.rotated {
+  transform: rotate(180deg);
+}
+
+.contentBadge {
+  display: inline-block;
+  background: var(--pe-green);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+.contentBadge.primaryBadge {
+  background: white;
+  color: var(--pe-green);
+  padding: 0.35rem 1rem;
+  font-size: 0.8rem;
+}
+
+/* Details Panel */
+.detailsPanel {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.detailsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.detailItem {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+}
+
+.detailLabel {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 0.35rem;
+}
+
+.detailValue {
+  font-size: 0.95rem;
+  color: white;
+  font-weight: 500;
+}
+
+.detailSection {
+  margin-bottom: 1rem;
+}
+
+.detailSection:last-child {
+  margin-bottom: 0;
+}
+
+.detailList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+
+.detailList li {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.8);
+  padding: 0.35rem 0;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.detailList li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--pe-green-light);
+}
+
+.note {
+  text-align: center;
+  margin-top: 3rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.95rem;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out 0.4s;
+}
+
+.note.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.note strong {
+  color: white;
+}
+
+@media (max-width: 968px) {
+  .secondaryRow {
+    grid-template-columns: 1fr;
+  }
+
+  .detailList {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,166 @@
+.vision {
+  min-height: 100vh;
+  width: 100%;
+  padding: var(--section-padding) clamp(2rem, 8vw, 12rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, var(--pe-blue-dark) 0%, var(--pe-dark) 100%);
+  text-align: center;
+}
+
+.sectionLabel {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--pe-green-light);
+  margin-bottom: 1rem;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.sectionLabel.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.visionNumber {
+  font-family: var(--font-display);
+  font-size: clamp(8rem, 20vw, 16rem);
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--pe-green-light) 0%, var(--pe-blue) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 0.9;
+  margin-bottom: 1rem;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out 0.1s;
+}
+
+.visionNumber.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.visionLabel {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 300;
+  color: var(--pe-gray-light);
+  margin-bottom: 3rem;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out 0.2s;
+}
+
+.visionLabel.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.visionEquation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out 0.3s;
+}
+
+.visionEquation.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.visionEquation span {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--pe-gray-light);
+}
+
+.operator {
+  color: var(--pe-green) !important;
+  font-weight: 600;
+}
+
+.result {
+  color: var(--pe-green-light) !important;
+  font-weight: 600;
+}
+
+.visionBreakdown {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+  margin-top: 4rem;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out 0.4s;
+}
+
+.visionBreakdown.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.visionItem {
+  text-align: center;
+}
+
+.visionItemNumber {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--pe-green-light);
+}
+
+.visionItemLabel {
+  font-size: 0.9rem;
+  color: var(--pe-gray);
+  margin-top: 0.25rem;
+}
+
+/* Shift Callout */
+.shiftCallout {
+  margin-top: 3rem;
+  padding: 1.25rem 2rem;
+  background: rgba(41, 132, 90, 0.15);
+  border: 1px solid var(--pe-green);
+  border-radius: 8px;
+  max-width: 600px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out 0.5s;
+}
+
+.shiftCallout.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.shiftText {
+  font-size: 1.1rem;
+  color: var(--pe-light);
+  line-height: 1.6;
+}
+
+.shiftText strong {
+  color: var(--pe-green-light);
+}
+
+@media (max-width: 768px) {
+  .visionEquation {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}

@@ -1,0 +1,209 @@
+.ideaPipeline {
+  min-height: 100vh;
+  width: 100%;
+  padding: var(--section-padding) clamp(2rem, 8vw, 12rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background: var(--pe-light);
+  color: var(--pe-dark);
+}
+
+.sectionLabel {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--pe-blue);
+  margin-bottom: 1rem;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.sectionLabel.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.sectionTitle {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 600;
+  margin-bottom: 3rem;
+  line-height: 1.2;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out 0.1s;
+}
+
+.sectionTitle.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.rulesSection,
+.vettingSection,
+.scaleNote {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out 0.2s;
+}
+
+.rulesSection.visible,
+.vettingSection.visible,
+.scaleNote.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Rules Grid */
+.rulesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.ruleCard {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  border: 1px solid var(--pe-gray-light);
+  transition: all 0.3s ease;
+}
+
+.ruleCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.ruleIcon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.ruleContent {
+  flex: 1;
+}
+
+.ruleTitle {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--pe-dark);
+  margin-bottom: 0.5rem;
+}
+
+.ruleDescription {
+  font-size: 0.9rem;
+  color: var(--pe-gray);
+  line-height: 1.5;
+}
+
+/* Vetting Section */
+.subsectionTitle {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--pe-dark);
+  margin-bottom: 0.75rem;
+}
+
+.vettingIntro {
+  font-size: 1rem;
+  color: var(--pe-gray);
+  margin-bottom: 1.5rem;
+}
+
+.vettingList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-width: 600px;
+}
+
+.vettingItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: white;
+  padding: 1rem 1.25rem;
+  border-radius: 8px;
+  border: 1px solid var(--pe-gray-light);
+  transition: all 0.3s ease;
+}
+
+.vettingItem:hover {
+  border-color: var(--pe-green);
+  background: rgba(41, 132, 90, 0.05);
+}
+
+.vettingCheck {
+  width: 28px;
+  height: 28px;
+  background: var(--pe-green);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+.vettingText {
+  font-size: 1rem;
+  color: var(--pe-dark);
+}
+
+/* Scale Note */
+.scaleNote {
+  display: flex;
+  gap: 1.5rem;
+  background: linear-gradient(135deg, var(--pe-blue) 0%, var(--pe-blue-dark) 100%);
+  border-radius: 16px;
+  padding: 2rem;
+  margin-top: 1rem;
+}
+
+.scaleIcon {
+  font-size: 2.5rem;
+  flex-shrink: 0;
+}
+
+.scaleContent {
+  flex: 1;
+}
+
+.scaleTitle {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.scaleText {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .scaleNote {
+    flex-direction: column;
+    text-align: center;
+  }
+}
