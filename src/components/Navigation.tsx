@@ -11,7 +11,6 @@ const sections = [
   { id: 'content', label: 'Content Types' },
   { id: 'pipeline', label: 'Idea Pipeline' },
   { id: 'delivery', label: 'Delivery' },
-  { id: 'questions', label: 'Questions' },
   { id: 'next', label: 'Next Steps' },
 ];
 

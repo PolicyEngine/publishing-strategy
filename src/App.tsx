@@ -8,7 +8,6 @@ import { Timeline } from './components/Timeline';
 import { WeeklyRhythm } from './components/WeeklyRhythm';
 import { IdeaPipeline } from './components/IdeaPipeline';
 import { EndToEndDelivery } from './components/EndToEndDelivery';
-import { Questions } from './components/Questions';
 import { ContentTypes } from './components/ContentTypes';
 import { NextSteps } from './components/NextSteps';
 import './styles/variables.css';
@@ -28,7 +27,6 @@ function App() {
       <ContentTypes />
       <IdeaPipeline />
       <EndToEndDelivery />
-      <Questions />
       <NextSteps />
     </>
   );
