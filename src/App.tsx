@@ -9,7 +9,6 @@ import { WeeklyRhythm } from './components/WeeklyRhythm';
 import { IdeaPipeline } from './components/IdeaPipeline';
 import { EndToEndDelivery } from './components/EndToEndDelivery';
 import { ContentTypes } from './components/ContentTypes';
-import { NextSteps } from './components/NextSteps';
 import './styles/variables.css';
 import './App.css';
 
@@ -27,7 +26,6 @@ function App() {
       <ContentTypes />
       <IdeaPipeline />
       <EndToEndDelivery />
-      <NextSteps />
     </>
   );
 }
