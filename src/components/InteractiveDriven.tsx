@@ -1,3 +1,5 @@
+'use client';
+
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 import styles from './InteractiveDriven.module.css';
 

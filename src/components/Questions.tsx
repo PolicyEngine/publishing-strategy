@@ -1,3 +1,5 @@
+'use client';
+
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 import { questionCategories } from '../data/questions';
 import styles from './Questions.module.css';
