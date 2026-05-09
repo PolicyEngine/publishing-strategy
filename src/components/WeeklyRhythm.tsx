@@ -1,3 +1,5 @@
+'use client';
+
 import { useState } from 'react';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 import styles from './WeeklyRhythm.module.css';
