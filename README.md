@@ -54,3 +54,7 @@ This project is configured for deployment on Vercel. The `vercel.json` configura
 - Interactive navigation and progress tracking
 - Responsive design with PolicyEngine branding
 - Optimized for performance with Next.js 16
+
+## License
+
+Code in this repository is released under the [MIT License](LICENSE). Original text and figures are released under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) with attribution to PolicyEngine. Third-party data and materials keep their own terms.
